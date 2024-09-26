@@ -4,7 +4,7 @@ import java.io.File;
 public class DeleteFile {
 
     public boolean delete(String file){
-        String ffile = file + ".txt";
+        String ffile = TodoMain.FILE_PATH + file + ".txt";
         File f = new File(ffile);
         if(f.exists())
             return f.delete();

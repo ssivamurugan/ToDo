@@ -12,7 +12,7 @@ public class TodoMain {
 
         Scanner sc = new Scanner(System.in);
         char yes_no = 'n';
-        char y_n = 'n';
+        char y_n;
         System.out.print("Do you want to add Todo task:(y/n) ");
         y_n = sc.next().trim().toLowerCase().charAt(0);
         sc.nextLine();
@@ -71,10 +71,8 @@ public class TodoMain {
         y_n = sc.next().trim().toLowerCase().charAt(0);
         sc.nextLine();
         if(y_n == 'y'){
-            String name = "";
             System.out.println("Enter the note name to delete: ");
-            name = sc.nextLine();
-            name = FILE_PATH + "" + name;
+            String name = sc.nextLine().trim();
             DeleteFile df = new DeleteFile();
             if(df.delete(name))
                 System.out.println(name+".txt was deleted...");
